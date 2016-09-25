@@ -17,3 +17,8 @@ C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParse
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParser\bin\Debug\MyWikiParser.pdb
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParser\obj\Debug\MyWikiParser.dll
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParser\obj\Debug\MyWikiParser.pdb
+C:\GitHub\RuFilmWikiParser\MyWikiParser\bin\Debug\MyWikiParser.dll
+C:\GitHub\RuFilmWikiParser\MyWikiParser\bin\Debug\MyWikiParser.pdb
+C:\GitHub\RuFilmWikiParser\MyWikiParser\obj\Debug\MyWikiParser.dll
+C:\GitHub\RuFilmWikiParser\MyWikiParser\obj\Debug\MyWikiParser.pdb
+C:\GitHub\RuFilmWikiParser\MyWikiParser\obj\Debug\MyWikiParser.csprojResolveAssemblyReference.cache
