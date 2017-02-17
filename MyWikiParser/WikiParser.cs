@@ -183,7 +183,7 @@ namespace MyWikiParser
             return ReturnCleanString(NewTemp);
         }
 
-        static HtmlNode GetBasicTable(string WikiUrl)
+        static HtmlNode GetBasicTable(string WikiUrl, bool TryAnother)
         {           
             Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
 
@@ -199,8 +199,7 @@ namespace MyWikiParser
 
                 var trNodes = html.GetElementbyId("mw-content-text").ChildNodes.Where(x => x.Name == "table");
 
-                Table = trNodes.ElementAt(0);
-               
+                Table = trNodes.ElementAt(0);               
             }
 
             return Table;
