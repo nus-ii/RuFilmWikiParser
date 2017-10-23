@@ -18,3 +18,14 @@ C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParse
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.csprojResolveAssemblyReference.cache
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.exe
 C:\Users\Илья\Documents\Visual Studio 2013\Projects\MyWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.pdb
+C:\Github\RuFilmWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.csprojResolveAssemblyReference.cache
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\MyWikiParserTest.exe.config
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\MyWikiParserTest.exe
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\MyWikiParserTest.pdb
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\MyWikiParser.dll
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\HtmlAgilityPack.dll
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\MyWikiParser.pdb
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\HtmlAgilityPack.pdb
+C:\Github\RuFilmWikiParser\MyWikiParserTest\bin\Debug\HtmlAgilityPack.xml
+C:\Github\RuFilmWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.exe
+C:\Github\RuFilmWikiParser\MyWikiParserTest\obj\Debug\MyWikiParserTest.pdb

@@ -135,9 +135,10 @@ namespace MyWikiParser
                 HtmlNode Basic = GetBasicTable(WikiUrl,index);
                 if (Basic != null)
                 {
-                    URL = GetImdbUrlFromTable(Basic);
+					Name = GetNameFromTable(Basic);
+					URL = GetImdbUrlFromTable(Basic);
                     ID = OnlyDigit(URL);
-                    Name = GetNameFromTable(Basic);
+                    
                     Year = GetYearFromTable(Basic);
                     Genre = GetGenreFromTable(Basic);
                     Director = GetDirectorFromTable(Basic);
@@ -150,8 +151,10 @@ namespace MyWikiParser
             }
             catch (Exception e)
             {
-                if (index == 0)
-                { return GetAllData(WikiUrl, ref ID, ref URL, ref Name, ref Year, ref Genre, ref Director, 1); }
+	            if (index == 0)
+	            {
+		            return GetAllData(WikiUrl, ref ID, ref URL, ref Name, ref Year, ref Genre, ref Director, 1);
+	            }
                 else
                 {
                     throw e;
@@ -209,9 +212,11 @@ namespace MyWikiParser
 
                 html.LoadHtml(wClient.DownloadString(WikiUrl));
 
-                var trNodes = html.GetElementbyId("mw-content-text").ChildNodes.Where(x => x.Id == "infobox vevent");
+                var trNodes = html.GetElementbyId("bodyContent");
+				var t=trNodes.ChildNodes.Where(x => x.Id == "mw-content-text");
+	            var h = t.FirstOrDefault().ChildNodes.FirstOrDefault(v=>v.Name=="div").ChildNodes.FirstOrDefault(m=>m.Name=="table");
 
-                Table = trNodes.ElementAt(tableNum);               
+	            Table = h; //t.ElementAt(tableNum);               
             }
 
             return Table;
