@@ -128,23 +128,35 @@ namespace MyWikiParser
             return true;
         }
 
-        public static bool GetAllData(string WikiUrl, ref string ID, ref string URL, ref string Name, ref string Year, ref string Genre, ref string Director)
+        public static bool GetAllData(string WikiUrl, ref string ID, ref string URL, ref string Name, ref string Year, ref string Genre, ref string Director, int index=0)
         {
-            HtmlNode Basic = GetBasicTable(WikiUrl);
-            if (Basic != null)
+            try
             {
-                URL = GetImdbUrlFromTable(Basic);
-                ID = OnlyDigit(URL);
-                Name = GetNameFromTable(Basic);
-                Year = GetYearFromTable(Basic);
-                Genre = GetGenreFromTable(Basic);
-                Director = GetDirectorFromTable(Basic);                
-                return true;
+                HtmlNode Basic = GetBasicTable(WikiUrl,index);
+                if (Basic != null)
+                {
+                    URL = GetImdbUrlFromTable(Basic);
+                    ID = OnlyDigit(URL);
+                    Name = GetNameFromTable(Basic);
+                    Year = GetYearFromTable(Basic);
+                    Genre = GetGenreFromTable(Basic);
+                    Director = GetDirectorFromTable(Basic);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                return false;
-            }            
+                if (index == 0)
+                { return GetAllData(WikiUrl, ref ID, ref URL, ref Name, ref Year, ref Genre, ref Director, 1); }
+                else
+                {
+                    throw e;
+                }
+            }
         }
 
         static string MakeCleanString(string WetString, string Extra)
@@ -183,7 +195,7 @@ namespace MyWikiParser
             return ReturnCleanString(NewTemp);
         }
 
-        static HtmlNode GetBasicTable(string WikiUrl, bool TryAnother)
+        static HtmlNode GetBasicTable(string WikiUrl, int tableNum=0)
         {           
             Encoding encode = System.Text.Encoding.GetEncoding("utf-8");
 
@@ -197,9 +209,9 @@ namespace MyWikiParser
 
                 html.LoadHtml(wClient.DownloadString(WikiUrl));
 
-                var trNodes = html.GetElementbyId("mw-content-text").ChildNodes.Where(x => x.Name == "table");
+                var trNodes = html.GetElementbyId("mw-content-text").ChildNodes.Where(x => x.Id == "infobox vevent");
 
-                Table = trNodes.ElementAt(0);               
+                Table = trNodes.ElementAt(tableNum);               
             }
 
             return Table;
